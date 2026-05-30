@@ -1,0 +1,47 @@
+.hero {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 44, 139, 0.1);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 18px 45px rgba(17, 32, 59, 0.08);
+}
+
+.hero h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 2.6vw, 3rem);
+    color: #002c8b;
+}
+
+.hero p {
+    margin: 0 0 1rem;
+    max-width: 40rem;
+}
+
+.hero-note {
+    color: #004b36;
+    font-weight: 600;
+}
+
+.hero-actions {
+    margin-top: 1.5rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.35rem;
+    background-color: #004b36;
+    color: #ffffff;
+    border-radius: 999px;
+    font-weight: 700;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+    background-color: #002c8b;
+    transform: translateY(-1px);
+}
