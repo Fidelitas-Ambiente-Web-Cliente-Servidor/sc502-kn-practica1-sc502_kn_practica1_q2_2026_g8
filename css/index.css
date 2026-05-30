@@ -1,21 +1,228 @@
+@import url("style.css");
 .hero {
     background-color: #ffffff;
     border: 1px solid rgba(0, 44, 139, 0.1);
     border-radius: 18px;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     box-shadow: 0 18px 45px rgba(17, 32, 59, 0.08);
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
 }
 
 .hero h1 {
     margin-top: 0;
-    margin-bottom: 1rem;
-    font-size: clamp(2rem, 2.6vw, 3rem);
+    margin-bottom: 0.75rem;
+    font-size: clamp(2.25rem, 3vw, 3.5rem);
     color: #002c8b;
 }
 
 .hero p {
-    margin: 0 0 1rem;
-    max-width: 40rem;
+    margin: 0;
+    max-width: 34rem;
+}
+
+.course-cards {
+    margin-top: 2.5rem;
+}
+
+.course-cards h2 {
+    margin-bottom: 1rem;
+    color: #002c8b;
+    font-size: 1.75rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(18rem, 1fr));
+    gap: 1rem;
+}
+
+.course-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 44, 139, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(17, 32, 59, 0.06);
+    min-height: 100%;
+}
+
+.course-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.course-card h3 {
+    margin: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+    color: #002c8b;
+}
+
+.course-card p {
+    margin: 0 1rem 1rem;
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.course-card .button {
+    margin: auto 1rem 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+}
+
+.course-card .button:hover,
+.course-card .button:focus-visible {
+    background-color: #002c8b;
+}
+
+@media (max-width: 900px) {
+    .cards-grid,
+    .stats-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.stats-section {
+    margin-top: 2.5rem;
+    padding: 1.5rem 0;
+}
+
+.stats-section h2 {
+    margin-bottom: 1rem;
+    color: #002c8b;
+    font-size: 1.75rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(14rem, 1fr));
+    gap: 1rem;
+}
+
+.stat-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 1.25rem;
+    border: 1px solid rgba(0, 44, 139, 0.12);
+    box-shadow: 0 10px 24px rgba(17, 32, 59, 0.05);
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #002c8b;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #333;
+    font-size: 0.98rem;
+}
+
+@media (max-width: 900px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.testimonial-section {
+    margin-top: 2.5rem;
+    padding: 1.5rem 0;
+}
+
+.testimonial-section h2 {
+    margin-bottom: 1rem;
+    color: #002c8b;
+    font-size: 1.75rem;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(18rem, 1fr));
+    gap: 1rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -1rem;
+    margin-left: -1rem;
+}
+
+.row > * {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.row-cols-1 > * {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .row-cols-md-2 > * {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .row-cols-md-3 > * {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+.g-4 > * {
+    padding-top: 1rem;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(17, 32, 59, 0.06);
+    border: 1px solid rgba(0, 44, 139, 0.12);
+}
+
+.testimonial-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.testimonial-content {
+    padding: 1rem;
+}
+
+.testimonial-content h3 {
+    margin: 0 0 0.5rem;
+    color: #002c8b;
+    font-size: 1.1rem;
+}
+
+.testimonial-content p {
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .hero-note {

@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Academia My Hero</title>
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
+        <nav class="navbar container py-3">
             <a class="brand" href="index.html">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/My_Hero_Academia_logo_in_Japan_20150106.png" alt="Logo de la academia">
                 <span>My Hero Academia</span>
@@ -21,19 +20,84 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="container py-4">
         <section class="hero">
-            <h1>Bienvenido a la Academia</h1>
-            <p>Un modelo básico de sitio con una barra de navegación y pie de página. Aquí mantendremos el estilo principal en <code>style.css</code> y los detalles de la página en <code>index.css</code>.</p>
-            <p class="hero-note">Colores preliminares: azul oscuro, verde oscuro y amarillo para detalles.</p>
+            <h1>My hero Academia</h1>
+            <p>Bienvenidos Heroes</p>
+            <p class="hero-note">¡Ve más allá, PLUS ULTRA!</p>
             <div class="hero-actions">
-                <a class="button" href="cursos.html">Ver cursos</a>
+                <a class="button" href="#">PLUS ULTRA!</a>
+            </div>
+        </section>
+        <section class="course-cards">
+            <h2>Nuestros cursos</h2>
+            <div class="cards-grid">
+                <article class="course-card">
+                    <img src="https://cdn.alfabetajuega.com/alfabetajuega/2022/08/boku-no-hero-academia.jpeg" alt="Curso de Héroes">
+                    <h3>Curso de Héroes</h3>
+                    <p>Enfocado en el combate, rescate y desarrollo de dones (Clases 1-A y 1-B).</p>
+                    <a class="button" href="#">Ver más</a>
+                </article>
+                <article class="course-card">
+                    <img src="https://areajugones.sport.es/wp-content/uploads/2024/08/my-hero-academia-ua-1.jpg" alt="Curso de Estudios Generales">
+                    <h3>Curso de Estudios Generales</h3>
+                    <p>Para estudiantes de bachillerato regular, con opción de transferencia por buen rendimiento (Clases C a E).</p>
+                    <a class="button" href="#">Ver más</a>
+                </article>
+                <article class="course-card">
+                    <img src="https://www.cultture.com/pics/2021/06/10-veces-que-my-hero-academia-hizo-que-la-escuela-pareciera-divertida-6.jpg" alt="Curso de Apoyo">
+                    <h3>Curso de Apoyo</h3>
+                    <p>Diseñado para inventores y genios que construyen los trajes y artefactos de soporte.</p>
+                    <a class="button" href="#">Ver más</a>
+                </article>
+                <article class="course-card">
+                    <img src="https://static.anime21.blog.br/2017/04/3-TURMA-DE-NEGOCIOS-1200x675-cropped.png" alt="Curso de Gestión">
+                    <h3>Curso de Gestión</h3>
+                    <p>Orientado a las relaciones públicas, marketing y gestión de agencias de héroes.</p>
+                    <a class="button" href="#">Ver más</a>
+                </article>
+            </div>
+        </section>
+        <section class="stats-section">
+            <h2>Estadísticas de la academia</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">1,250</div>
+                    <div class="stat-label">Estudiantes inscritos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">48</div>
+                    <div class="stat-label">Profesores activos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">Cursos disponibles</div>
+                </div>
+            </div>
+        </section>
+        <section class="testimonial-section">
+            <h2>Testimonios de estudiantes</h2>
+            <div class="testimonial-grid">
+                <article class="testimonial-card">
+                    <img src="https://anibase.net/files/cd613c92d63c264ac5e5c12de93997d9" alt="Tsuyu Asui">
+                    <div class="testimonial-content">
+                        <h3>Tsuyu Asui</h3>
+                        <p>"La academia me ayudó a mejorar mis habilidades y a sentirme más segura en cada misión. El ambiente de aprendizaje es increíble."</p>
+                    </div>
+                </article>
+                <article class="testimonial-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/it/2/26/Shoto_Todoroki.jpg" alt="Shoto Todoroki">
+                    <div class="testimonial-content">
+                        <h3>Shoto Todoroki</h3>
+                        <p>"Aquí encontré un lugar donde puedo desarrollarme como héroe y también aprender de mis compañeros. Los profesores son muy exigentes y justos."</p>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
     <footer>
         <div class="footer-row">
-            <div class="footer-brand">Academia My Hero</div>
+            <div class="footer-brand"> My Hero Academia</div>
             <div class="footer-social">
                 <a href="#" aria-label="Facebook" class="social-link">
                     <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/250px-Facebook_f_logo_%282019%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=parser&utm_content=thumbnail" alt="Facebook">

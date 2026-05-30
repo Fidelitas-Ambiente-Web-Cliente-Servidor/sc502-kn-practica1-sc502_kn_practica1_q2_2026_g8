@@ -29,6 +29,12 @@ body {
     background: linear-gradient(180deg, #f4f6fb 0%, #ffffff 100%);
 }
 
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 img {
     max-width: 100%;
     display: block;
