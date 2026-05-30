@@ -1,0 +1,87 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-cursos {
+    min-height: 420px;
+    background: linear-gradient(rgba(0, 0, 0, .70), rgba(0, 0, 0, .70)),
+    url("https://wallpapercave.com/wp/wp1872478.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.nav-pills .nav-link {
+    color: #dc3545;
+    font-weight: 600;
+    margin: 5px;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #dc3545;
+    color: white;
+}
+
+.course-card {
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, .18) !important;
+}
+
+.course-card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.course-card p {
+    color: #555;
+}
+
+.card-footer {
+    padding-bottom: 20px;
+}
+
+.summary-box {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .10);
+    height: 100%;
+}
+
+.summary-box i {
+    font-size: 2.3rem;
+    color: #dc3545;
+}
+
+.summary-box h3 {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer {
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .hero-cursos {
+        min-height: 350px;
+        padding: 40px 0;
+    }
+
+    .hero-cursos h1 {
+        font-size: 2rem;
+    }
+
+    .course-card img {
+        height: 180px;
+    }
+}
