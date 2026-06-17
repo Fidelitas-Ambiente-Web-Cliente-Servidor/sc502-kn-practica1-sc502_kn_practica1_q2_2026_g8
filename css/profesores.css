@@ -1,0 +1,185 @@
+@import url("style.css");
+
+.hero-profesores {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 44, 139, 0.1);
+    border-radius: 18px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 18px 45px rgba(17, 32, 59, 0.08);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-profesores h1 {
+    color: #002c8b;
+    margin-bottom: 1rem;
+}
+
+.hero-profesores p {
+    max-width: 700px;
+    margin: auto;
+}
+
+.profesores-section {
+    margin-top: 2.5rem;
+}
+
+.profesores-section h2 {
+    color: #002c8b;
+    margin-bottom: 1.5rem;
+}
+
+.profesores-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(18rem, 1fr));
+    gap: 1.5rem;
+}
+
+.profesor-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 44, 139, 0.12);
+    box-shadow: 0 10px 24px rgba(17, 32, 59, 0.06);
+    transition: 0.3s ease;
+}
+
+.profesor-card:hover {
+    transform: translateY(-6px);
+}
+
+.profesor-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.profesor-card h3 {
+    color: #002c8b;
+    margin: 1rem 1rem 0.5rem;
+}
+
+.profesor-card span {
+    display: block;
+    color: #004b36;
+    font-weight: 700;
+    margin: 0 1rem 0.75rem;
+}
+
+.profesor-card p {
+    margin: 0 1rem 1.5rem;
+    line-height: 1.6;
+}
+
+.mision-vision {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(18rem, 1fr));
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 44, 139, 0.12);
+    box-shadow: 0 10px 24px rgba(17, 32, 59, 0.06);
+}
+
+.info-card h2 {
+    color: #002c8b;
+    margin-bottom: 1rem;
+}
+
+.info-card p {
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+
+    .profesores-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mision-vision {
+        grid-template-columns: 1fr;
+    }
+
+    /* ========================================
+   MODAL DE PROFESORES
+======================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+
+    width: 90%;
+    max-width: 700px;
+
+    padding: 2rem;
+    border-radius: 16px;
+
+    position: relative;
+
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.cerrar-modal {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.detalle-profesor img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.detalle-profesor h2 {
+    color: #002c8b;
+    margin-bottom: 0.5rem;
+}
+
+.detalle-profesor h4 {
+    color: #004b36;
+    margin-bottom: 1rem;
+}
+
+.detalle-profesor ul {
+    padding-left: 20px;
+}
+
+.profesor-card {
+    cursor: pointer;
+}
+
+}
