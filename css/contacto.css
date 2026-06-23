@@ -1,0 +1,109 @@
+@import url("style.css");
+
+.hero-contacto {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 44, 139, 0.1);
+    border-radius: 18px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 18px 45px rgba(17, 32, 59, 0.08);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-contacto h1 {
+    color: #002c8b;
+    margin-bottom: 1rem;
+}
+
+.hero-contacto p {
+    max-width: 700px;
+    margin: auto;
+}
+
+.contacto-grid {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(18rem, 1fr));
+    gap: 1.5rem;
+}
+
+.contacto-form-card,
+.contacto-info-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 44, 139, 0.12);
+    box-shadow: 0 10px 24px rgba(17, 32, 59, 0.06);
+}
+
+.contacto-form-card h2,
+.contacto-info-card h2 {
+    color: #002c8b;
+    margin-bottom: 1rem;
+}
+
+.contacto-info-card p {
+    line-height: 1.6;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: #11203b;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 44, 139, 0.2);
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #11203b;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #002c8b;
+}
+
+.contacto-form-card .button {
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.mapa-section {
+    margin-top: 2.5rem;
+}
+
+.mapa-section h2 {
+    color: #002c8b;
+    margin-bottom: 1rem;
+}
+
+.mapa-section iframe {
+    width: 100%;
+    height: 320px;
+    border: 0;
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(17, 32, 59, 0.06);
+}
+
+@media (max-width: 900px) {
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+}
