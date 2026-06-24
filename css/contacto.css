@@ -85,6 +85,33 @@
     font-size: 0.95rem;
 }
 
+.contacto-form-card .button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.error-message {
+    display: block;
+    min-height: 1.1rem;
+    margin-top: 0.3rem;
+    color: #c0392b;
+    font-size: 0.85rem;
+}
+
+.success-message {
+    display: none;
+    margin-top: 1.25rem;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    background-color: rgba(0, 75, 54, 0.1);
+    color: #004b36;
+    font-weight: 600;
+}
+
+.success-message.visible {
+    display: block;
+}
+
 .mapa-section {
     margin-top: 2.5rem;
 }

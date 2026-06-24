@@ -46,29 +46,36 @@
                 <div class="form-group">
                     <label for="nombre">Nombre completo</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Izuku Midoriya">
+                    <span class="error-message" id="error-nombre"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="correo">Correo electrónico</label>
                     <input type="email" id="correo" name="correo" placeholder="correo@ua.edu">
+                    <span class="error-message" id="error-correo"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="telefono">Teléfono</label>
                     <input type="tel" id="telefono" name="telefono" placeholder="8888-8888">
+                    <span class="error-message" id="error-telefono"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="asunto">Asunto</label>
                     <input type="text" id="asunto" name="asunto" placeholder="Información sobre cursos">
+                    <span class="error-message" id="error-asunto"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="mensaje">Mensaje</label>
                     <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."></textarea>
+                    <span class="error-message" id="error-mensaje"></span>
                 </div>
 
-                <button type="submit" class="button">Enviar mensaje</button>
+                <button type="submit" class="button" id="btnEnviar" disabled>Enviar mensaje</button>
+
+                <p class="success-message" id="successMessage"></p>
             </form>
         </div>
 
@@ -124,6 +131,8 @@
 
     </div>
 </footer>
+
+<script src="js/contacto.js"></script>
 
 </body>
 </html>
