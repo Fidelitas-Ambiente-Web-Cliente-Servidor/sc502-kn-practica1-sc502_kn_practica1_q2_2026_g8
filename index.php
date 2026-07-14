@@ -2,7 +2,7 @@
 // Front Controller — único punto de entrada del sitio.
 // Cada rol agrega su propio controllers/<Nombre>Controller.php; index.php solo enruta.
 
-$controllerName = $_GET['controller'] ?? 'contacto';
+$controllerName = $_GET['controller'] ?? 'index';
 $action         = $_GET['action']     ?? 'index';
 $method         = $_SERVER['REQUEST_METHOD'];
 
