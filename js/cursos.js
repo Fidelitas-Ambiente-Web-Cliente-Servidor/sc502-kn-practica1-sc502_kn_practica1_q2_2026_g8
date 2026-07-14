@@ -1,4 +1,11 @@
+
+ /*
+   |--------------------------------------------------------------------------
+| CÓDIGO DE TAREA 1 CONSERVADO PARA TAREA 4
+|--------------------------------------------------------------------------
+
 const courses = [
+  
     {
         nombre: "Curso de Héroes",
         descripcion: "Enfocado en el combate, rescate y desarrollo de dones.",
@@ -151,4 +158,5 @@ document.addEventListener("DOMContentLoaded", function () {
             filterCourses();
         });
     });
-});
+})
+    );
