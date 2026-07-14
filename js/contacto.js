@@ -103,14 +103,16 @@ document.addEventListener("DOMContentLoaded", function () {
     asuntoInput.addEventListener("input", actualizarBoton);
     mensajeInput.addEventListener("input", actualizarBoton);
 
-    // Al enviar, se evita el comportamiento por defecto, se muestra el éxito y se limpia el formulario
-    form.addEventListener("submit", function (evento) {
-        evento.preventDefault();
-
-        successMessage.textContent = "¡Tu mensaje fue enviado con éxito! Te contactaremos pronto.";
-        successMessage.classList.add("visible");
-
-        form.reset();
-        btnEnviar.disabled = true;
-    });
+    // Tarea 2: simulaba el envío en el navegador sin backend.
+    // Comentado (no eliminado) para Tarea 4 - ahora el formulario
+    // se envía de verdad por POST a ContactoController::store() (Tarea 3 - MVC).
+    // form.addEventListener("submit", function (evento) {
+    //     evento.preventDefault();
+    //
+    //     successMessage.textContent = "¡Tu mensaje fue enviado con éxito! Te contactaremos pronto.";
+    //     successMessage.classList.add("visible");
+    //
+    //     form.reset();
+    //     btnEnviar.disabled = true;
+    // });
 });
