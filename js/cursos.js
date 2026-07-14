@@ -1,11 +1,15 @@
-
- /*
-   |--------------------------------------------------------------------------
+/*
+|--------------------------------------------------------------------------
 | CÓDIGO DE TAREA 1 CONSERVADO PARA TAREA 4
 |--------------------------------------------------------------------------
+|
+| Este código queda comentado porque en Tarea 2 los cursos ahora se
+| consultan desde PHP y MySQL mediante MVC.
+|
+| No eliminar este código porque se reutilizará en Tarea 4.
+|
 
 const courses = [
-  
     {
         nombre: "Curso de Héroes",
         descripcion: "Enfocado en el combate, rescate y desarrollo de dones.",
@@ -71,13 +75,16 @@ function createCourseCard(course) {
     h3.textContent = course.nombre;
 
     const categoria = document.createElement("p");
-    categoria.innerHTML = `<strong>Categoría:</strong> ${course.categoria}`;
+    categoria.innerHTML =
+        `<strong>Categoría:</strong> ${course.categoria}`;
 
     const duracion = document.createElement("p");
-    duracion.innerHTML = `<strong>Duración:</strong> ${course.duracion}`;
+    duracion.innerHTML =
+        `<strong>Duración:</strong> ${course.duracion}`;
 
     const precio = document.createElement("p");
-    precio.innerHTML = `<strong>Precio:</strong> ${course.precio}`;
+    precio.innerHTML =
+        `<strong>Precio:</strong> ${course.precio}`;
 
     const p = document.createElement("p");
     p.textContent = course.descripcion;
@@ -100,63 +107,101 @@ function createCourseCard(course) {
 
 // Renderiza los cursos filtrados
 function renderCourses(listaCursos) {
-    const container = document.getElementById("coursesContainer");
+    const container =
+        document.getElementById("coursesContainer");
 
     if (!container) {
-        console.error("Contenedor de cursos no encontrado");
+        console.error(
+            "Contenedor de cursos no encontrado"
+        );
+
         return;
     }
 
     container.innerHTML = "";
 
     if (listaCursos.length === 0) {
-        container.innerHTML = "<p>No se encontraron cursos.</p>";
+        container.innerHTML =
+            "<p>No se encontraron cursos.</p>";
+
         return;
     }
 
     listaCursos.forEach(course => {
-        const courseCard = createCourseCard(course);
+        const courseCard =
+            createCourseCard(course);
+
         container.appendChild(courseCard);
     });
 }
 
 // Aplica búsqueda y categoría al mismo tiempo
 function filterCourses() {
-    const searchInput = document.getElementById("searchCourse");
-    const searchText = searchInput.value.toLowerCase();
+    const searchInput =
+        document.getElementById("searchCourse");
 
-    const filteredCourses = courses.filter(course => {
-        const matchSearch =
-            course.nombre.toLowerCase().includes(searchText) ||
-            course.descripcion.toLowerCase().includes(searchText);
+    const searchText =
+        searchInput.value.toLowerCase();
 
-        const matchCategory =
-            categoriaActual === "Todos" || course.categoria === categoriaActual;
+    const filteredCourses =
+        courses.filter(course => {
+            const matchSearch =
+                course.nombre
+                    .toLowerCase()
+                    .includes(searchText) ||
+                course.descripcion
+                    .toLowerCase()
+                    .includes(searchText);
 
-        return matchSearch && matchCategory;
-    });
+            const matchCategory =
+                categoriaActual === "Todos" ||
+                course.categoria === categoriaActual;
+
+            return matchSearch && matchCategory;
+        });
 
     renderCourses(filteredCourses);
 }
 
 // Inicializa eventos
-document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = document.getElementById("searchCourse");
-    const categoryButtons = document.querySelectorAll(".category-filter");
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+        const searchInput =
+            document.getElementById("searchCourse");
 
-    renderCourses(courses);
+        const categoryButtons =
+            document.querySelectorAll(
+                ".category-filter"
+            );
 
-    searchInput.addEventListener("input", filterCourses);
+        renderCourses(courses);
 
-    categoryButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            categoryButtons.forEach(btn => btn.classList.remove("active"));
-            button.classList.add("active");
+        searchInput.addEventListener(
+            "input",
+            filterCourses
+        );
 
-            categoriaActual = button.getAttribute("data-category");
+        categoryButtons.forEach(button => {
+            button.addEventListener(
+                "click",
+                function () {
+                    categoryButtons.forEach(btn => {
+                        btn.classList.remove("active");
+                    });
 
-            filterCourses();
+                    button.classList.add("active");
+
+                    categoriaActual =
+                        button.getAttribute(
+                            "data-category"
+                        );
+
+                    filterCourses();
+                }
+            );
         });
-    });
-})
-    );
+    }
+);
+
+*/

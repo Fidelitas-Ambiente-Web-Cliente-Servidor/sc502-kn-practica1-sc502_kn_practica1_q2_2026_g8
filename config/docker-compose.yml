@@ -1,0 +1,76 @@
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: php-apache-demo
+
+    ports:
+      - "8080:80"
+
+    volumes:
+      - ./:/var/www/html
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.0
+
+    container_name: mysql-demo
+
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: appdb
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppass
+
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+
+    ports:
+      - "3307:3306"
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-uroot",
+          "-proot"
+        ]
+
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+
+    container_name: phpmyadmin-demo
+
+    restart: unless-stopped
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root
+
+    ports:
+      - "8082:80"
+
+volumes:
+  db_data:

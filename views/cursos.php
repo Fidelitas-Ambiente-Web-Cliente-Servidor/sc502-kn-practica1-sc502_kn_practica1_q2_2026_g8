@@ -5,6 +5,18 @@ $pageCss = 'cursos.css';
 $pageScript = '';
 $activeNav = 'cursos';
 
+/*
+|--------------------------------------------------------------------------
+| Variables recibidas desde CursosController
+|--------------------------------------------------------------------------
+| Estos valores predeterminados evitan errores si Intelephense analiza
+| la vista sin reconocer que las variables se crean en el controlador.
+*/
+
+$cursos = $cursos ?? [];
+$categoriasPermitidas = $categoriasPermitidas ?? [];
+$categoriaSeleccionada = $categoriaSeleccionada ?? '';
+
 require __DIR__ . '/layout/header.php';
 
 ?>
@@ -26,24 +38,23 @@ require __DIR__ . '/layout/header.php';
 
 <section class="course-cards container">
 
-    <div class="d-flex justify-content-between align-items-center flex-wrap mb-4">
+    <div
+        class="d-flex justify-content-between align-items-center
+               flex-wrap gap-3 mb-4"
+    >
 
         <div>
 
-            <h2>Cursos Disponibles</h2>
+            <h2>Cursos disponibles</h2>
 
             <p>
-
                 Se encontraron
 
                 <strong>
-
                     <?= count($cursos) ?>
-
                 </strong>
 
-                curso<?= count($cursos) != 1 ? 's' : '' ?>.
-
+                curso<?= count($cursos) !== 1 ? 's' : '' ?>.
             </p>
 
         </div>
@@ -51,7 +62,7 @@ require __DIR__ . '/layout/header.php';
         <form
             action="index.php"
             method="GET"
-            class="d-flex gap-2 align-items-center"
+            class="d-flex gap-2 align-items-end flex-wrap"
         >
 
             <input
@@ -66,52 +77,67 @@ require __DIR__ . '/layout/header.php';
                 value="index"
             >
 
-            <select
-                name="categoria"
-                class="form-select"
-            >
+            <div>
 
-                <option value="">
-                    Todas las categorías
-                </option>
+                <label
+                    for="categoria"
+                    class="form-label"
+                >
+                    Categoría
+                </label>
 
-                <?php foreach ($categoriasPermitidas as $categoria): ?>
+                <select
+                    id="categoria"
+                    name="categoria"
+                    class="form-select"
+                >
 
-                    <option
-                        value="<?= htmlspecialchars($categoria) ?>"
-
-                        <?= ($categoriaSeleccionada == $categoria)
-                            ? 'selected'
-                            : '' ?>
-
-                    >
-
-                        <?= htmlspecialchars($categoria) ?>
-
+                    <option value="">
+                        Todas las categorías
                     </option>
 
-                <?php endforeach; ?>
+                    <?php foreach ($categoriasPermitidas as $categoria): ?>
 
-            </select>
+                        <option
+                            value="<?= htmlspecialchars(
+                                $categoria,
+                                ENT_QUOTES,
+                                'UTF-8'
+                            ) ?>"
+
+                            <?= $categoriaSeleccionada === $categoria
+                                ? 'selected'
+                                : '' ?>
+                        >
+
+                            <?= htmlspecialchars(
+                                $categoria,
+                                ENT_QUOTES,
+                                'UTF-8'
+                            ) ?>
+
+                        </option>
+
+                    <?php endforeach; ?>
+
+                </select>
+
+            </div>
 
             <button
                 class="btn btn-primary"
                 type="submit"
             >
-
                 Filtrar
-
             </button>
 
-            <?php if ($categoriaSeleccionada != ''): ?>
+            <?php if ($categoriaSeleccionada !== ''): ?>
 
                 <a
                     href="index.php?controller=cursos&action=index"
                     class="btn btn-secondary"
                 >
-
                     Limpiar
-
                 </a>
 
             <?php endif; ?>
@@ -124,11 +150,11 @@ require __DIR__ . '/layout/header.php';
 
         <div class="alert alert-warning">
 
-            <h4>
+            <h4>No se encontraron cursos</h4>
 
-                No existen cursos para esa categoría.
-
-            </h4>
+            <p class="mb-0">
+                No existen cursos para la categoría seleccionada.
+            </p>
 
         </div>
 
@@ -140,61 +166,82 @@ require __DIR__ . '/layout/header.php';
 
                 <div class="col-lg-4 col-md-6 mb-4">
 
-                    <div class="card h-100 shadow-sm">
+                    <article class="card h-100 shadow-sm">
 
                         <img
-                            src="<?= htmlspecialchars($curso['imagen']) ?>"
+                            src="<?= htmlspecialchars(
+                                $curso['imagen'] ?? '',
+                                ENT_QUOTES,
+                                'UTF-8'
+                            ) ?>"
                             class="card-img-top"
-                            alt="<?= htmlspecialchars($curso['nombre']) ?>"
+                            alt="<?= htmlspecialchars(
+                                $curso['nombre'] ?? 'Curso',
+                                ENT_QUOTES,
+                                'UTF-8'
+                            ) ?>"
                         >
 
                         <div class="card-body">
 
                             <span class="badge bg-primary mb-2">
 
-                                <?= htmlspecialchars($curso['categoria']) ?>
+                                <?= htmlspecialchars(
+                                    $curso['categoria'] ?? '',
+                                    ENT_QUOTES,
+                                    'UTF-8'
+                                ) ?>
 
                             </span>
 
-                            <h5 class="card-title">
+                            <h3 class="card-title h5">
 
-                                <?= htmlspecialchars($curso['nombre']) ?>
+                                <?= htmlspecialchars(
+                                    $curso['nombre'] ?? '',
+                                    ENT_QUOTES,
+                                    'UTF-8'
+                                ) ?>
 
-                            </h5>
+                            </h3>
 
                             <p class="card-text">
 
-                                <?= htmlspecialchars($curso['descripcion']) ?>
+                                <?= htmlspecialchars(
+                                    $curso['descripcion'] ?? '',
+                                    ENT_QUOTES,
+                                    'UTF-8'
+                                ) ?>
 
                             </p>
 
                             <p>
 
-                                <strong>
+                                <strong>Duración:</strong>
 
-                                    Duración:
-
-                                </strong>
-
-                                <?= htmlspecialchars($curso['duracion']) ?>
+                                <?= htmlspecialchars(
+                                    $curso['duracion'] ?? '',
+                                    ENT_QUOTES,
+                                    'UTF-8'
+                                ) ?>
 
                             </p>
 
                             <p>
 
-                                <strong>
+                                <strong>Precio:</strong>
 
-                                    Precio:
-
-                                </strong>
-
-                                ₡<?= number_format($curso['precio'],0,',','.') ?>
+                                ₡<?= number_format(
+                                    (float) ($curso['precio'] ?? 0),
+                                    0,
+                                    ',',
+                                    '.'
+                                ) ?>
 
                             </p>
 
                         </div>
 
-                    </div>
+                    </article>
 
                 </div>
 
@@ -206,8 +253,4 @@ require __DIR__ . '/layout/header.php';
 
 </section>
 
-<?php
-
-require __DIR__ . '/layout/footer.php';
-
-?>
+<?php require __DIR__ . '/layout/footer.php'; ?>
